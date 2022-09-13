@@ -14,11 +14,6 @@ class FastTransport(paramiko.Transport):
         self.packetizer.REKEY_BYTES = pow(2, 40)
         self.packetizer.REKEY_PACKETS = pow(2, 40)
 
-secrets_client = boto3.client(
-    'secretsmanager',
-    region_name='<your-region>'
-)
-
 S3 = boto3.resource(
     's3',
     region_name = '<your-region>'
